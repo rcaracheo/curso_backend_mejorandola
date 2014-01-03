@@ -66,4 +66,19 @@ def add(request):
     
     template = "form.html"
     return render_to_response(template,context_instance= RequestContext(request,locals()))
+
+
+from django.views.generic import ListView,DetailView
+
+class EnlaceListView(ListView):
+    model = Enlace
+    context_object_name = 'enlaces'
+    def get_template_names(self):
+        return 'index.html'
+        
+class EnlaceDetailView(ListView):
+    model = Enlace
+    context_object_name = 'enlaces'
+    def get_template_names(self):
+        return 'index.html'
         
